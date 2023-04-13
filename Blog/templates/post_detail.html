@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block  content %}
+<center>
+<h1>{{ post.title }}</h1>
+created date : {{ post.date }}
+<br>
+ 
+
+
+<br>
+<img src="{{post.image.url}}" alt="" width="150px" height="150px">
+<br>
+
+{{ post.description }}
+
+
+
+<br><br>
+
+<button type="button" class="btn btn-dark" ><a href="{% url 'index' %}">Back</a> </button>
+
+</center>
+
+<hr>
+
+<center>
+<br>
+<label for="">Comments</label><br>
+    <textarea name="block" id="" cols="30" rows="10" style="width: 1000px;height: 150px;"></textarea>
+    <form action="" style="margin-top: 45px;background-color: blanchedalmond;"><br><br>
+
+        <div class="container">
+
+            <label for=""> Name</label>
+            <input type="text" name="" id="" style="width:250px; height: 25px;">
+            <br>
+            <label for="">Comment</label>
+            <input type="text" name="" id="" style="width:250px; height:50px;">
+            <br><br>
+            <button class="btn btn-primary" type="submit">Add</button>
+        </div>
+    </form>
+</center>
+{% endblock %}

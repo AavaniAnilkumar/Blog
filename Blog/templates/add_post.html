@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<center><form action="{% url 'addpostsave' %}" method="post" enctype="multipart/form-data" style="background-color: cornsilk;width: 100%;height: 800px;">
+    {% csrf_token %}
+    <h4>Add Blog</h4>
+    <div style="margin-top: 50px;">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="">
+
+    </div>
+    <br>
+
+    <div>
+        <label for="description">Description</label>
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
+    </div>
+    <br>
+    <div>
+        <label for="image">Upload Photo</label>
+        <input type="file" name="image" id="">
+    </div>
+    <br>
+    <div>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="">
+    </div>
+    <br>
+    <button class="btn btn-success" style="width:150px;">Add</button>
+
+</form>
+</center>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block  content %}
+
+
+
+<title>Blog Page</title>
+<h1 style="text-align: center;font-size: 50px;font-weight: bold;">Blog Spot</h1>
+<center style="margin-top: 25px;">
+<ul>
+    
+{% for i in data %}
+
+        <h1 style="font-size: 25px;"><b>{{i.title}}</b></h1> <br>
+        <img src="{{i.image.url}}" alt="" width="100px" height="100px" style="margin-top: -10px;">
+        <br>
+        {{i.description}}
+        <br>
+        
+        <label for="">Created Date:</label>   <b>{{i.date}}</b>
+        <br>
+
+        <button class="btn btn-primary" type="submit"><a href="{% url 'post_detail' i.pk %}" style="color: white;">Read More</a>  </button>
+<br>
+<hr>
+{% endfor %}   
+</ul>
+</center>
+
+
+{% endblock %}
